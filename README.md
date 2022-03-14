@@ -10,7 +10,7 @@ If you want to use this, its better if you use the Microsoft Store Release:
 
 When you want to install it yourself download the latest Release from Github:
 
-[Latest Release](https://github.com/Allatu/LostArkMap/releases/tag/1.0.14)
+[Latest Release](https://github.com/Allatu/LostArkMap/releases/download/1.0.14/LostArkMap_1.0.14.0.zip)
 
 1. Unpack *.zip
 2. Right Click Install.ps1
