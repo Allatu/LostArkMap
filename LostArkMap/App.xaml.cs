@@ -14,7 +14,8 @@ namespace LostArkMap
     /// </summary>
     sealed partial class App : Application
     {
-        private XboxGameBarWidget youtubeWidget = null;
+        private XboxGameBarWidget mapWidget = null;
+        private XboxGameBarWidget mapSettingsWidget = null;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -109,13 +110,24 @@ namespace LostArkMap
 
             if (widgetArgs.AppExtensionId == "lostarkmapwidget")
             {
-                youtubeWidget = new XboxGameBarWidget(
+                mapWidget = new XboxGameBarWidget(
                     widgetArgs,
                     Window.Current.CoreWindow,
                     rootFrame);
-                rootFrame.Navigate(typeof(LostArkMapWidget), youtubeWidget);
+                rootFrame.Navigate(typeof(LostArkMapWidget), mapWidget);
 
-                Window.Current.Closed += LostArkMapWidget_Closed; ;
+                Window.Current.Closed += LostArkMapWidget_Closed;
+            }
+
+            if (widgetArgs.AppExtensionId == "lostarkmapsettings")
+            {
+                mapSettingsWidget = new XboxGameBarWidget(
+                    widgetArgs,
+                    Window.Current.CoreWindow,
+                    rootFrame);
+                rootFrame.Navigate(typeof(LostArkMapSettings), mapSettingsWidget);
+
+                Window.Current.Closed += LostArkMapWidget_Closed; 
             }
 
             Window.Current.Activate();
@@ -124,8 +136,14 @@ namespace LostArkMap
 
         private void LostArkMapWidget_Closed(object sender, Windows.UI.Core.CoreWindowEventArgs e)
         {
-            youtubeWidget = null;
+            mapWidget = null;
             Window.Current.Closed -= LostArkMapWidget_Closed;
+        }
+
+        private void MapSettingsWidget_Closed(object sender, Windows.UI.Core.CoreWindowEventArgs e)
+        {
+            mapSettingsWidget = null;
+            Window.Current.Closed -= MapSettingsWidget_Closed;
         }
 
 
