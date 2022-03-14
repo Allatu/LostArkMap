@@ -13,7 +13,7 @@ When you want to install it yourself download the latest Release from Github:
 [Latest Release](https://github.com/Allatu/LostArkMap/releases/download/1.0/LostArkMap_1.0.7.0.msixbundle)
 
 1. Open Downloaded msixbundle
-2. Click Install ![InstallPng](./Assets\Install.png)
+2. Click Install ![InstallPng](https://github.com/Allatu/LostArkMap/blob/master/Assets/Install.png)
 3. Now this Window opens ![](Assets\Afterinstall.png) **This Window should be closed!**
 4. Now the Widget Appears in the Widget List (Win + G) ![](Assets\Widgetlist.png) 
 5. When its Favorid it Appers in the Top ![](Assets\stared.png) 
