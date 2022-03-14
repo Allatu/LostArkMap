@@ -15,7 +15,9 @@ When you want to install it yourself download the latest Release from Github:
 1. Open Downloaded msixbundle
 2. Click Install
 ![InstallPng](https://github.com/Allatu/LostArkMap/blob/master/Assets/Install.png)
-4. Now this Window opens ![](Assets\Afterinstall.png) **This Window should be closed!**
+4. Now this Window opens 
+![afterinstall](https://github.com/Allatu/LostArkMap/blob/master/Assets/AfterInstall.png) 
+**This Window should be closed!**
 5. Now the Widget Appears in the Widget List (Win + G) ![](Assets\Widgetlist.png) 
 6. When its Favorid it Appers in the Top ![](Assets\stared.png) 
 
