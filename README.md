@@ -10,7 +10,7 @@ If you want to use this, its better if you use the Microsoft Store Release:
 
 When you want to install it yourself download the latest Release from Github:
 
-[Latest Release](https://github.com/Allatu/LostArkMap/releases/download/1.0/LostArkMap_1.0.7.0.msixbundle)
+[Latest Release](https://github.com/Allatu/LostArkMap/releases/download/1.0.11/LostArkMap_1.0.11.0_x86_x64.msixbundle)
 
 1. Open Downloaded msixbundle
 2. Click Install<br>
