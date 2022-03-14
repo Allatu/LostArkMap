@@ -18,14 +18,16 @@ When you want to install it yourself download the latest Release from Github:
 3. Now this Window opens 
 ![afterinstall](https://github.com/Allatu/LostArkMap/blob/master/Assets/AfterInstall.png) 
 **This Window should be closed!**
-5. Now the Widget Appears in the Widget List (Win + G)
+5. Now the Widget Appears in the Widget List (Win + G)<br>
 ![widgetList](https://github.com/Allatu/LostArkMap/blob/master/Assets/WidgetList.png) 
 6. When its Favorid it Appers in the Top 
 ![stared](https://github.com/Allatu/LostArkMap/blob/master/Assets/stared.png) 
 
 ## Uninstall
 
-1. Open the Widget store <br> ![](Assets\widgetstore.png) 
-2. Now Navigate to "Installed" Tab, select "Lost Ark Map" and press "Uninstall" ![](Assets\uninstall.png)  
+1. Open the Widget store <br> 
+![widgetStore](https://github.com/Allatu/LostArkMap/blob/master/Assets/widgetstore.png) 
+2. Now Navigate to "Installed" Tab, select "Lost Ark Map" and press "Uninstall" 
+![unintall](https://github.com/Allatu/LostArkMap/blob/master/Assets/uninstall.png)  
 
 
