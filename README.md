@@ -10,18 +10,12 @@ If you want to use this, its better if you use the Microsoft Store Release:
 
 When you want to install it yourself download the latest Release from Github:
 
-[Latest Release](https://github.com/Allatu/LostArkMap/releases/download/1.0.11/LostArkMap_1.0.11.0_x86_x64.msixbundle)
+[Latest Release](https://github.com/Allatu/LostArkMap/releases/tag/1.0.14)
 
-1. Open Downloaded msixbundle
-2. Click Install<br>
-![InstallPng](https://github.com/Allatu/LostArkMap/blob/master/Assets/Install.png)
-3. Now this Window opens 
-![afterinstall](https://github.com/Allatu/LostArkMap/blob/master/Assets/AfterInstall.png) 
-**This Window should be closed!**
-5. Now the Widget Appears in the Widget List (Win + G)<br>
-![widgetList](https://github.com/Allatu/LostArkMap/blob/master/Assets/WidgetList.png) 
-6. When its Favorid it Appers in the Top 
-![stared](https://github.com/Allatu/LostArkMap/blob/master/Assets/stared.png) 
+1. Unpack *.zip
+2. Right Click Install.ps1
+3. Execute with Powershell
+4. Follow Powershell Instructions
 
 ## Uninstall
 
