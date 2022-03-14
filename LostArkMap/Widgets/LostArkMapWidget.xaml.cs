@@ -1,5 +1,8 @@
 ﻿using Microsoft.Gaming.XboxGameBar;
 using System;
+using System.Diagnostics;
+using System.IO;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -42,12 +45,48 @@ namespace LostArkMap.Widgets
 
             if (!(e.Parameter is XboxGameBarWidget wid))
                 return;
+
+            SettingsInteractor.Instance.OpacityChanged += Instance_OpacityChanged;
                
             NavigateHome();
 
+            SetOpacityFromSettings();
+
             widget = wid;
 
-            wid.SettingsSupported = false;
+            widget.SettingsClicked += Widget_SettingsClicked;
+
+            widget.CloseRequested += Widget_CloseRequested;
+
+            wid.SettingsSupported = true;
+
+        }
+
+        private void Widget_CloseRequested(XboxGameBarWidget sender, XboxGameBarWidgetCloseRequestedEventArgs args)
+        {
+            widget.SettingsClicked -= Widget_SettingsClicked;
+            widget.CloseRequested -= Widget_CloseRequested;
+            SettingsInteractor.Instance.OpacityChanged -= Instance_OpacityChanged;
+        }
+
+        private void Instance_OpacityChanged(object sender, EventArgs e)
+        {
+            SetOpacityFromSettings();                      
+        }
+
+        private async void SetOpacityFromSettings()
+        {
+            if (!SettingsInteractor.Instance.OverrideOpacity)
+                return;
+
+            var op = SettingsInteractor.Instance.Opacity;
+
+            var rounded = Math.Round(op, 2, MidpointRounding.AwayFromZero);
+
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                webView.Opacity = rounded;
+            });
         }
 
         private void NavigateHome()
@@ -57,12 +96,11 @@ namespace LostArkMap.Widgets
             webView.Navigate(uri);
         }
 
-        private void HomeButton_Clicked(object sender, RoutedEventArgs e)
+        private async void Widget_SettingsClicked(XboxGameBarWidget sender, object args)
         {
-            NavigateHome();
+            await widget.ActivateSettingsAsync();
         }
 
         #endregion
-
     }
 }

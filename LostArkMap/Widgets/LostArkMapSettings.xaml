@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="LostArkMap.Widgets.LostArkMapSettings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LostArkMap.Widgets"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:Width="320"
+    d:Height="580"
+    >
+
+    <Grid>
+
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  />
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="1">
+                <TextBlock VerticalAlignment="Center"
+                       Text="Design"
+                       FontSize="16"
+                       FontWeight="SemiBold" 
+                       Foreground="LightGray"/>
+
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Overwrite default transparency"
+                           VerticalAlignment="Center"/>
+                    <CheckBox x:Name="overrideOpacityCheckBox" Grid.Column="1" Checked="overrideOpacityCheckBox_Checked" Unchecked="overrideOpacityCheckBox_Unchecked" />
+                </Grid>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Transparency"          
+                           VerticalAlignment="Center"/>
+                    <Slider x:Name="opacitySlider" IsEnabled="{Binding IsChecked, ElementName=overrideOpacityCheckBox}"
+                        Grid.Row="1" Minimum="0" Maximum="1" TickFrequency="0.01" StepFrequency="0.01" ValueChanged="opacitySlider_ValueChanged" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>

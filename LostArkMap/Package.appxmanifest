@@ -10,7 +10,7 @@
   <Identity
     Name="34970YannikZimmermann.LostArkMap"
     Publisher="CN=21848374-2D92-4654-8E7A-36B1A30E76C3"
-    Version="1.0.7.0" />
+    Version="1.0.11.0" />
 
   <mp:PhoneIdentity PhoneProductId="24d39849-aeb9-4d75-a527-cc52cf3491e3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -53,7 +53,7 @@
 							<HomeMenuVisible>true</HomeMenuVisible>
 							<PinningSupported>true</PinningSupported>
 							<ActivateAfterInstall>true</ActivateAfterInstall>
-							
+							<SettingsSupported AppExtensionId="lostarkmapsettings" />
 							<Window>
 								<AllowForegroundTransparency>true</AllowForegroundTransparency>
 								<Size>
@@ -67,6 +67,30 @@
 								<ResizeSupported>
 									<Horizontal>true</Horizontal>
 									<Vertical>true</Vertical>
+								</ResizeSupported>
+							</Window>
+						</GameBarWidget>
+					</uap3:Properties>
+				</uap3:AppExtension>
+			</uap3:Extension>
+
+			<!-- Extension 1 Settings (Also an extension of separate type) -->
+			<uap3:Extension Category="windows.appExtension">
+				<uap3:AppExtension Name="microsoft.gameBarUIExtension"
+								   Id="lostarkmapsettings"
+								   DisplayName="Map Settings"
+								   Description="Change Map Behavior with some small settings"
+								   PublicFolder="lostarkmapwidget">
+					<uap3:Properties>
+						<GameBarWidget Type="Settings">
+							<Window>
+								<Size>
+									<Height>580</Height>
+									<Width>320</Width>
+								</Size>
+								<ResizeSupported>
+									<Horizontal>false</Horizontal>
+									<Vertical>false</Vertical>
 								</ResizeSupported>
 							</Window>
 						</GameBarWidget>
