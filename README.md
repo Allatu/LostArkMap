@@ -2,6 +2,7 @@
 
 ## Microsoft Store
 
+**Microsoft Store Release is still in Progress.**
 If you want to use this, its better if you use the Microsoft Store Release:
 
 
