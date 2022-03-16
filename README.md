@@ -4,7 +4,11 @@
 
 If you want to use this, its better if you use the Microsoft Store Release:
 
+![widgetStore](https://github.com/Allatu/LostArkMap/blob/master/Assets/storeEntry.png) 
 
+or
+
+[Microsoft Store](https://www.microsoft.com/store/productId/9N4RP73RQ5NB)
 
 ## Install
 
