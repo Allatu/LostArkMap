@@ -33,7 +33,7 @@ namespace LostArkMap.Widgets
 
         #region Constants
 
-        private const string url = "https://papunika.com/map/";
+        private const string url = "https://papunika.com/world/";
 
         #endregion
 

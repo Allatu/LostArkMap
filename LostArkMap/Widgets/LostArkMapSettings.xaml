@@ -45,6 +45,7 @@
                 <Slider x:Name="opacitySlider" IsEnabled="{Binding IsChecked, ElementName=overrideOpacityCheckBox}"
                         Grid.Row="1" Minimum="0" Maximum="1" TickFrequency="0.01" StepFrequency="0.01" ValueChanged="opacitySlider_ValueChanged" />
             </Grid>
+         
 
             <TextBlock VerticalAlignment="Center"
                            Margin="0,20,0,0"
