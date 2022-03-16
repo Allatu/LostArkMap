@@ -13,44 +13,69 @@
     <Grid>
 
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"  />
-        <Grid>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
 
-            <StackPanel Grid.Row="1">
-                <TextBlock VerticalAlignment="Center"
+        <StackPanel >
+            <TextBlock VerticalAlignment="Center"
+                           Margin="0,20,0,0"
                        Text="Design"
                        FontSize="16"
                        FontWeight="SemiBold" 
                        Foreground="LightGray"/>
 
-                <Grid >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="30"/>
-                    </Grid.ColumnDefinitions>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
 
-                    <TextBlock Text="Overwrite default transparency"
+                <TextBlock Text="Overwrite default transparency"
                            VerticalAlignment="Center"/>
-                    <CheckBox x:Name="overrideOpacityCheckBox" Grid.Column="1" Checked="overrideOpacityCheckBox_Checked" Unchecked="overrideOpacityCheckBox_Unchecked" />
-                </Grid>
+                <CheckBox x:Name="overrideOpacityCheckBox" Grid.Column="1" Checked="overrideOpacityCheckBox_Checked" Unchecked="overrideOpacityCheckBox_Unchecked" />
+            </Grid>
 
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-                    <TextBlock Text="Transparency"          
+                <TextBlock Text="Transparency"          
                            VerticalAlignment="Center"/>
-                    <Slider x:Name="opacitySlider" IsEnabled="{Binding IsChecked, ElementName=overrideOpacityCheckBox}"
+                <Slider x:Name="opacitySlider" IsEnabled="{Binding IsChecked, ElementName=overrideOpacityCheckBox}"
                         Grid.Row="1" Minimum="0" Maximum="1" TickFrequency="0.01" StepFrequency="0.01" ValueChanged="opacitySlider_ValueChanged" />
-                </Grid>
-            </StackPanel>
-        </Grid>
+            </Grid>
+
+            <TextBlock VerticalAlignment="Center"
+                           Margin="0,20,0,0"
+                       Text="Copyright"
+                       FontSize="16"
+                       FontWeight="SemiBold" 
+                       Foreground="LightGray"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Widget Creator"  Grid.Column="0"/>
+                <TextBlock Text="Yannik Zimmermann"  Grid.Row="1" Margin="15,0,0,0"/>            
+                <TextBlock Text="Discord: Allatu#0001"  Grid.Row="2" Margin="15,0,0,0"/>            
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Map Creator"  Grid.Column="0"/>
+                <TextBlock Margin="15,0,0,0" Grid.Row="1">                    
+                        <Hyperlink NavigateUri="https://papunika.com/contact/">Pupunika</Hyperlink>                    
+                </TextBlock>
+            </Grid>
+
+        </StackPanel>
 
     </Grid>
 </Page>
