@@ -1,4 +1,7 @@
-﻿using Windows.Storage;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Windows.Storage;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -18,11 +21,11 @@ namespace LostArkMap.Widgets
         }
 
 
+        public Dictionary<string, Tuple<string, string>> Maps => SettingsInteractor.Instance.Maps;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
 
             overrideOpacityCheckBox.IsChecked = SettingsInteractor.Instance.OverrideOpacity;
 
@@ -31,7 +34,20 @@ namespace LostArkMap.Widgets
             if (!SettingsInteractor.Instance.OverrideOpacity)
                 opacitySlider.Value = opacity;
             else            
-                opacitySlider.Value = SettingsInteractor.Instance.Opacity > 1d ? 1d : SettingsInteractor.Instance.Opacity;           
+                opacitySlider.Value = SettingsInteractor.Instance.Opacity > 1d ? 1d : SettingsInteractor.Instance.Opacity;
+
+            var key = SettingsInteractor.Instance.Map;
+
+            if (key == null)
+            {
+                mapSelector.SelectedIndex = 2;
+            }
+            else
+            {
+                var ind = Array.IndexOf(Maps.Keys.ToArray(), key);
+
+                mapSelector.SelectedIndex = ind == -1 ? 2 : ind;
+            }
         }
 
         private void opacitySlider_ValueChanged(object sender, Windows.UI.Xaml.Controls.Primitives.RangeBaseValueChangedEventArgs e)
@@ -47,17 +63,21 @@ namespace LostArkMap.Widgets
         private void overrideOpacityCheckBox_Checked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             SettingsInteractor.Instance.OverrideOpacity = true;
-
         }
 
         private void overrideOpacityCheckBox_Unchecked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            
+        {            
             opacitySlider.Value = 1;
 
-            SettingsInteractor.Instance.OverrideOpacity = false;
-            
+            SettingsInteractor.Instance.OverrideOpacity = false;        
+        }
 
+        private void mapSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(sender is ComboBox comboBox)
+            {
+                SettingsInteractor.Instance.Map = comboBox.SelectedValue.ToString();                
+            }
         }
     }
 }

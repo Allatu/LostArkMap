@@ -33,7 +33,12 @@ namespace LostArkMap.Widgets
 
         #region Constants
 
-        private const string url = "https://papunika.com/world/";
+        private const string lostArkmap = "https://lostarkmap.com/index.html";
+        private const string pupunikaOld = "https://papunika.com/map/?z=overworld&l=us";
+        private const string pupunikaNew = "https://papunika.com/world";
+
+        //private const string url = "https://papunika.com/world/";
+        //private const string url = "https://lostarkmap.com/index.html";
 
         #endregion
 
@@ -47,6 +52,10 @@ namespace LostArkMap.Widgets
                 return;
 
             SettingsInteractor.Instance.OpacityChanged += Instance_OpacityChanged;
+
+            SettingsInteractor.Instance.Reload += Instance_Reload;
+
+            SettingsInteractor.Instance.MapChanged += Instance_Reload;
                
             NavigateHome();
 
@@ -62,11 +71,18 @@ namespace LostArkMap.Widgets
 
         }
 
+        private void Instance_Reload(object sender, EventArgs e)
+        {
+            NavigateHome();
+        }
+
         private void Widget_CloseRequested(XboxGameBarWidget sender, XboxGameBarWidgetCloseRequestedEventArgs args)
         {
             widget.SettingsClicked -= Widget_SettingsClicked;
             widget.CloseRequested -= Widget_CloseRequested;
             SettingsInteractor.Instance.OpacityChanged -= Instance_OpacityChanged;
+            SettingsInteractor.Instance.Reload -= Instance_Reload;
+            SettingsInteractor.Instance.MapChanged -= Instance_Reload;
         }
 
         private void Instance_OpacityChanged(object sender, EventArgs e)
@@ -89,11 +105,12 @@ namespace LostArkMap.Widgets
             });
         }
 
-        private void NavigateHome()
+        private async void NavigateHome()
         {
-            var uri = new Uri(url);
-
-            webView.Navigate(uri);
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                webView.Source = SettingsInteractor.GetMapUri();
+            });                       
         }
 
         private async void Widget_SettingsClicked(XboxGameBarWidget sender, object args)

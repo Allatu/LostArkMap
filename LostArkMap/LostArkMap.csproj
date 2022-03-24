@@ -212,6 +212,12 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.13</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.8.0-prerelease.220118001</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Web.WebView2">
+      <Version>1.0.1189-prerelease</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Widgets\LostArkMapSettings.xaml">

@@ -10,7 +10,7 @@
   <Identity
     Name="34970YannikZimmermann.LostArkMap"
     Publisher="CN=21848374-2D92-4654-8E7A-36B1A30E76C3"
-    Version="1.0.14.0" />
+    Version="1.0.15.0" />
 
   <mp:PhoneIdentity PhoneProductId="24d39849-aeb9-4d75-a527-cc52cf3491e3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -59,10 +59,10 @@
 								<Size>
 									<Height>625</Height>
 									<Width>600</Width>
-									<MinHeight>500</MinHeight>
-									<MinWidth>600</MinWidth>
-									<MaxHeight>1000</MaxHeight>
-									<MaxWidth>1000</MaxWidth>
+									<MinHeight>150</MinHeight>
+									<MinWidth>150</MinWidth>
+									<!--<MaxHeight>1000</MaxHeight>
+									<MaxWidth>1000</MaxWidth>-->
 								</Size>
 								<ResizeSupported>
 									<Horizontal>true</Horizontal>
